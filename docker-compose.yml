@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq-creato-dev
+    image: rabbitmq:3-management
+    ports:
+      - ${AMQP_PORT}:${AMQP_PORT}
+      - ${FRONTEND_MQ_PORT}:${FRONTEND_MQ_PORT}
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
