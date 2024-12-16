@@ -11,4 +11,8 @@ services:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
     networks:
-      - default
+      - shared_net
+
+networks:
+  shared_net:
+    external: true
